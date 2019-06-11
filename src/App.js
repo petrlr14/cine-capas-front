@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {image_server_instance} from "./conf/axios/axios-instances";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    clickHandler = () => {
+        const file = document.querySelector('input[type=file]');
+        const data = new FormData();
+        data.append("file", file.files[0]);
+
+        image_server_instance.post("/", data)
+            .then(response=>{
+                console.log(response);
+            })
+    };
+
+    render() {
+        return (
+            <>
+                <input type={"file"} formEncType={"multipart/form-data"} name={"file"}/>
+                <button onClick={this.clickHandler}>Send</button>
+            </>
+        );
+    }
+
 }
 
 export default App;
