@@ -1,6 +1,7 @@
 import React from 'react';
 import {Navbar, NavbarBrand} from 'reactstrap';
 
+
 export const NavBar = (props) => {
 
     //const [isOpen, changeIsOpen] = useState(false);
