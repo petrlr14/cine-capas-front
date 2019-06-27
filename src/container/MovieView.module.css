@@ -1,0 +1,17 @@
+.main{
+    margin: 4em auto;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    grid-row-gap: 2em;
+}
+
+.main>img{
+    margin: 0 auto;
+}
+.main>div>div{
+    min-height:50%;
+    max-height: 50%;
+}
+button{
+    margin: 0;
+}
