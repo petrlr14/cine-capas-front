@@ -29,8 +29,8 @@ class MovieView extends Component {
         })
     }
 
-    clickReservationHandler(id){
-        this.props.history.push("/movie/reservation", {id:id});
+    clickReservationHandler(movie){
+        this.props.history.push("/client/movie/reservation", {movie:movie});
     }
 
     render() {
@@ -48,7 +48,7 @@ class MovieView extends Component {
                                     <h2>{element.movieName}</h2>
                                     <p>{element.movieDescription}</p>
                                 </div>
-                                <button onClick={()=>this.clickReservationHandler(element.movieId)}>Reservar</button>
+                                <button onClick={()=>this.clickReservationHandler(element)}>Reservar</button>
                             </div>
                         </div>
                     })

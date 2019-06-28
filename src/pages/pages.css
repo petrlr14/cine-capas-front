@@ -1,0 +1,9 @@
+.pageContent{
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+
+.side{
+    height: 100vh;
+    max-height: 100vh;
+}
